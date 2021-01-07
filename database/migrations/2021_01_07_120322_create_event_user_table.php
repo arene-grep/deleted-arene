@@ -15,16 +15,17 @@ class CreateEventUserTable extends Migration
     {
         Schema::create('event_user', function (Blueprint $table) {
             $table->id();
-            $table->string('score');
+            $table->string('score')->default(0);
             $table->foreignId('user_id')
                 ->nullable()
                 ->constrained();
             $table->foreignId('event_id')
                 ->nullable()
                 ->constrained();
-            $table->integer('wins');
-            $table->integer('losses');
-            $table->integer('draws');
+            $table->integer('ranking')->nullable();
+            $table->integer('wins')->default(0);
+            $table->integer('losses')->default(0);
+            $table->integer('draws')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->foreignId('trading_card_game_id')
                 ->nullable()
                 ->constrained();
+            $table->dateTime('date');
             $table->softDeletes();
             $table->timestamps();
         });

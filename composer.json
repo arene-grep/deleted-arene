@@ -59,12 +59,12 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
+        "ide_helper": "@php artisan ide-helper:models --write-mixin",
         "setup": [
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:models --write-mixin"
+            "@php artisan ide-helper:generate"
         ],
         "setupdb": [
             "php artisan db:create",
